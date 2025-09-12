@@ -11,19 +11,36 @@
 
 ## 📚 About
 
-`while(!success) { study(); }`는 CS(Computer Science) 핵심 개념들을 함께 공부하고,  
-**웃고, 열정 불태우며**, 결국 **성공에 도달**하기 위한 스터디입니다.  
+<div align="center">
+  <img src="https://github.com/brightk123/CS/blob/b6b4a743faaacb3a4d273dc07ed2c17ae3b18864/Initial%20Commit/%EC%95%84%EC%9E%90%EC%95%84%EC%9E%90.jpg" alt="아좌좟" width="300"/>
 
-혼자 공부할 땐 `segmentation fault` 나던 사람도,  
-같이 하면 어느새 `return 0;`을 찍게 됩니다.  
+아부.
+(아이디어 부탁한다는 뜻)<br>
 
-((아이디어 부탁))
+`while(!success) { study(); }`는 CS(Computer Science) 핵심 개념들을 함께 공부하고,<br>
+**열정 불태우며**, **무엇이든 성공해 내겠다는** 스터디입니다.  
+</div>
+
+
+
+
+
 
 ---
 
 ## 🎯 목표
-
 - 아자아자 화이팅
+
+---
+
+## ✨ 다들 힘내
+
+<div align="center">
+🎵 내 어린 시절 우연히 들었던 믿지 못할 한마디 
+이 세상을 다 준다는 매혹적인 얘기 내게 꿈을 심어주었어<br>
+🎵 말도 안 돼 고개 저어도 내 안에 나, 나를 보고 속삭여 
+세상은 꿈꾸는 자의 것이라고 용기를 내 넌 할 수 있어<br>
+</div>
 
 ---
 
@@ -38,7 +55,6 @@ while-study/
 ├── Algorithm/          # 알고리즘
 ├── Database/           # 데이터베이스
 ├── SystemDesign/       # 시스템 디자인
-├── CodingTest/         # 코딩 테스트 문제 풀이
 ├── Initial Commit/     # 최초 커밋 파일
 └── README.md           
 </code>
@@ -50,7 +66,7 @@ while-study/
 
 | 항목 | 내용 |
 |------|------|
-| 📅 주기 | 매주 1~2회 (유동적) |
+| 📅 주기 | 매주 2회 |
 | 📝 방식 | 주제 선정 → 공부 → 마크다운 정리 → 발표/공유 |
 | 💬 커뮤니케이션 | GitHub Issues / Discussions / Discord 등 |
 | 📂 자료 업로드 | 주제별 폴더에 정리하여 PR |
@@ -59,13 +75,12 @@ while-study/
 
 ## 👥 멤버
 
-((추후 수정))
 | 이름 | GitHub |
 |--------|--------|
-| 🐧 홍길동 | [@hong-gil-dong](https://github.com/hong-gil-dong) |
-| 🐥 김개발 | [@kim-dev](https://github.com/kim-dev) |
-| 🐥 김개발 | [@kim-dev](https://github.com/kim-dev) |
-| 🐥 김개발 | [@kim-dev](https://github.com/kim-dev) |
+| 🐧 김소은 | [@soeundipia-teez](https://github.com/soeundipia-teez) |
+| 🍀 박경아 | [@brightk123](https://github.com/brightk123) |
+| ✨ 신윤수 | [@capristersky](https://github.com/capristersky) |
+| 🐰 이수인 | [@itwin25](https://github.com/itwin25) |
 
 ---
 
