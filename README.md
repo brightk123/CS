@@ -82,6 +82,7 @@ while-study/
 | 🍀 박경아 | [@brightk123](https://github.com/brightk123) |
 | ✨ 신윤수 | [@capristersky](https://github.com/capristersky) |
 | 🐰 이수인 | [@itwin25](https://github.com/itwin25) |
+| 🍒 김가은 | [@gaeunji1](https://github.com/gaeunji1) |
 
 ---
 
