@@ -6,7 +6,7 @@
 → 데이터들이 우선순위를 가지고 있어서 들어간 순서와 상관 없이 우선순위가 높은 원소가 먼저 나옴
 - 가장 중요한 원소를 빨리 찾아야 하는 경우 유용
 - 우선순위 큐는 배열, 연결리스트, 힙으로 구현할 수 있는데 이때 힙 구현이 가장 효율
-- Java에서는 java.util.PriorityQueue를 활
+- Java에서는 java.util.PriorityQueue를 활용
 
 ### 우선순위 큐의 활용 예시
 
@@ -211,6 +211,5 @@ ex)
 
 ---
 
-참고자료
-
-Computer Science/Data Structure/Heap.md
+참고자료<br>
+[gyoogle/tech-interview-for-developerComputer Science/Data Structure/Heap.md](https://github.com/gyoogle/tech-interview-for-developer/blob/master/Computer%20Science/Data%20Structure/Heap.md)
