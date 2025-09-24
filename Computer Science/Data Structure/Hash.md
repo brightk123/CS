@@ -15,7 +15,7 @@
 
 이때, key 값이 ‘해시 함수’에 의해서 변환한다!
 
-![image.png](image.png)
+![./img/Hash1.png](/Computer%20Science/Data%20Structure/img/Hash1.png)
 
 ## 1. 자료구조의 특징
 
@@ -56,7 +56,7 @@ Integer hashFunction(String key) {
 
 해시 함수에서 해시를 출력하고 → 해시 테이블에 저장하는 과정까지
 
-![image.png](image%201.png)
+![./image.png](/Computer%20Science/Data%20Structure/img/Hash2.png)
 
 - 버킷: 하나의 주소를 갖는 파일의 한 구역
     - 버킷의 크기 = 같은 주소에 포함될 수 있는 레코드의 수
@@ -109,7 +109,7 @@ HashMap<String, Integer> map = new HashMap<>();
 - 해시 테이블 저장공간 외의 공간을 활용하는 기법
 - Linked List 자료 구조 이용
 
-![image.png](image%202.png)
+![image.png](/Computer%20Science/Data%20Structure/img/Hash3.png)
 
 ### 2) Linear Probing 기법
 
