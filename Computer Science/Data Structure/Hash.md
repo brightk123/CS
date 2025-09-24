@@ -15,7 +15,7 @@
 
 이때, key 값이 ‘해시 함수’에 의해서 변환한다!
 
-![./img/Hash1.png](/Computer%20Science/Data%20Structure/img/Hash1.png)
+![./img/Hash1.png](/Computer%20Science/Data%20Structure/img/Hash3.png)
 
 ## 1. 자료구조의 특징
 
