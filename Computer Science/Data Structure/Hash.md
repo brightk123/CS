@@ -1,3 +1,5 @@
+https://kimgascooding.tistory.com/100
+
 # Hash
 
 해시는 입력 데이터를 고정된 길이의 데이터로 변환된 값
