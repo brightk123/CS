@@ -161,6 +161,9 @@ class LinkedQueue {
     4. 큐를 배열과 연결 리스트로 각각 구현했을 때 차이점은? 배열은 크기 고정, `deque`시 O(n) 발생. 연결 리스트는 크기 동적, 삽입/삭제 O(1).
     5. 스택/큐를 연결 리스트로 구현할 수 있는가? 가능하다. 특히 큐에서 head/tail 포인터 활용.
 
+---
+참고자료: https://cdragon.tistory.com/entry/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-LinkedList%EC%97%B0%EA%B2%B0-%EB%A6%AC%EC%8A%A4%ED%8A%B8
+
 
 
 
