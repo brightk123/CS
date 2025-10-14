@@ -4,6 +4,8 @@
 
 ## 1. 개요
 
+![DB 인덱스 구조](./img/Index.png)
+
 ```jsx
 추가적인 쓰기 작업과 저장 공간을 활용하여 데이터베이스 테이블의 검색 속도를 향상시키기 위한 구조
 ```
@@ -144,11 +146,11 @@ DROP INDEX idx_employee_name;
 
 | 구분 | 정의 | 중복 허용 | 인덱스 기준 | 사용 목적 | 예시 |
 | --- | --- | --- | --- | --- | --- |
-| 🟩 **고유 인덱스**(Unique Index) | 중복값이 없는 인덱스 | ❌ 불가능 | 단일 컬럼 | 데이터 무결성 보장 | Primary Key, 주민번호 |
-| 🟦 **비고유 인덱스**(Non-Unique Index) | 중복값을 허용하는 인덱스 | ✅ 가능 | 단일 컬럼 | 검색 성능 향상 | 부서 번호, 지역명 |
-| 🟨 **단일 인덱스**(Single Index) | 하나의 컬럼에 인덱스 생성 | ✅ 가능 | 단일 컬럼 | 단일 조건 검색 최적화 | name, age 등 |
-| 🟧 **결합 인덱스**(Composite Index) | 두 개 이상 컬럼을 묶어서 인덱스 생성 | ✅ 가능 | 다중 컬럼 | 다중 조건 검색 최적화 | (dept_id, name) |
-| 🟪 **함수 기반 인덱스**(Function-Based Index) | 컬럼의 함수·계산식 결과값에 인덱스 생성 | ✅ 가능 | 계산식 결과 | 함수/표현식 조건에서도 인덱스 활용 | UPPER(name), ABS(price) |
+| 🟩 **고유 인덱스**(Unique Index) | 중복값이 없는 인덱스 |  ❌ 불가능 | 단일 컬럼 | 데이터 무결성 보장 | Primary Key, 주민번호 |
+| 🟦 **비고유 인덱스**(Non-Unique Index) | 중복값을 허용하는 인덱스 |  ✅ 가능 | 단일 컬럼 | 검색 성능 향상 | 부서 번호, 지역명 |
+| 🟨 **단일 인덱스**(Single Index) | 하나의 컬럼에 인덱스 생성 |  ✅ 가능 | 단일 컬럼 | 단일 조건 검색 최적화 | name, age 등 |
+| 🟧 **결합 인덱스**(Composite Index) | 두 개 이상 컬럼을 묶어서 인덱스 생성 |  ✅ 가능 | 다중 컬럼 | 다중 조건 검색 최적화 | (dept_id, name) |
+| 🟪 **함수 기반 인덱스**(Function-Based Index) | 컬럼의 함수·계산식 결과값에 인덱스 생성 |  ✅ 가능 | 계산식 결과 | 함수/표현식 조건에서도 인덱스 활용 | UPPER(name), ABS(price) |
 
 ---
 
@@ -167,3 +169,8 @@ DROP INDEX idx_employee_name;
 3. DML(INSERT/UPDATE/DELETE)이 자주 일어나는 컬럼의 경우 성능 저하
 ⇒ 데이터가 바뀌는 과정에서 인덱스 Key를 옮기는 작업이 발생하면서 논리적, 
      물리적 순서가 달라지거나 데이터 수와 인덱스 수가 달라지는 등의 문제가 발생할 수 있다.
+
+---
+### 참고
+<a href="https://lalwr.blogspot.com/2016/02/db-index.html" target="_blank">lalwr.blogspot.com/2016/02/db-index.html</a> <br>
+<a href="https://github.com/gyoogle/tech-interview-for-developer/blob/master/Computer%20Science/Database/%5BDB%5D%20Index.md" target="_blank">gyoogle/tech-interview-for-developer/blob/master/Computer%20Science/Database/%5BDB%5D%20Index.md</a>
