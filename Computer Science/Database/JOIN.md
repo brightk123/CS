@@ -329,3 +329,13 @@ ON A.ManagerID = B.EmpID;
 ### 4. SELF JOIN이 필요한 가장 흔한 경우는?
 
 - 테이블 내에서 상하 관계나 계층 구조를 나타낼 때입니다. (예: 직원 테이블에서 EmployeeID와 ManagerID를 연결하여 상사/직원 관계 조회)
+
+## <br>
+
+---
+<br>
+
+Reference
+- https://github.com/gyoogle/tech-interview-for-developer/blob/master/Computer%20Science/Database/%5BDatabase%20SQL%5D%20JOIN.md?plain=1
+- https://red9.com/blog/sql-joins-venn-diagram/
+
