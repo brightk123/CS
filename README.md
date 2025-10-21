@@ -17,6 +17,7 @@
 아부.
 (아이디어 부탁한다는 뜻)<br>
 ㄴ 아부다비..<br>
+ㄴㄴ https://github.com/gyoogle/tech-interview-for-developer
 
 `while(!success) { study(); }`는 CS(Computer Science) 핵심 개념들을 함께 공부하고,<br>
 **열정 불태우며**, **무엇이든 성공해 내겠다는** 스터디입니다.  
