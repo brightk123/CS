@@ -9,10 +9,11 @@
 |        | Normalization (정규화) | SI | ⭕
 |        | Transaction (트랜잭션) | GE | ⭕
 |**25/10/28**| Transaction Isolation Level | KA |
-|        | SQL Injection | YS |
-|        | SQL과 NOSQL의 차이 | SE |
+|        | SQL Injection | SE |
+|        | SQL과 NOSQL의 차이 | SI |
 
 <hr>
+
 
 
 
