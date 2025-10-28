@@ -21,8 +21,9 @@
 그러나 성능을 높이기 위해 Locking의 범위를 줄인다면 잘못된 값이 처리될 문제가 발생하게 된다. <br>
 따라서 **효율적인 Locking 방법이 필요하다.**
 
+---
 
-## 3. 트랜잭션 간 발생할 수 있는 문제
+## 3. 낮은 단계 Isolation Level을 활용할 때 트랜잭션 간 발생할 수 있는 문제
 
 | 문제 | 설명 |
 |------|------|
@@ -30,6 +31,7 @@
 | Non-repeatable Read | 같은 데이터를 여러 번 읽을 때 값이 달라짐 |
 | Phantom Read | 같은 조건으로 조회 시 결과 행 수가 달라짐 |
 
+   
 ### (1) Dirty Read 예시
 ```sql
 -- 트랜잭션 1
@@ -46,6 +48,12 @@ ROLLBACK;
 
 -- 트랜잭션 2는 잘못된(rollback된) 데이터를 읽은 상태
 ```
+- Dirty Read
+
+  > 커밋되지 않은 수정중인 데이터를 다른 트랜잭션에서 읽을 수 있도록 허용할 때 발생하는 현상
+  >
+  > 어떤 트랜잭션에서 아직 실행이 끝나지 않은 다른 트랜잭션에 의한 변경사항을 보게되는 경우  
+  - 발생 Level: Read Uncommitted
 
 ### (2) Non-repeatable Read 예시
 ```sql
@@ -61,6 +69,11 @@ COMMIT;
 SELECT name FROM users WHERE id = 1;  -- 결과: 'Lee'
 -- 같은 데이터를 두 번 읽었는데 값이 달라짐
 ```
+- Non-Repeatable Read
+
+  > 한 트랜잭션에서 같은 쿼리를 두 번 수행할 때 그 사이에 다른 트랜잭션 값을 수정 또는 삭제하면서 두 쿼리의 결과가 상이하게 나타나는 일관성이 깨진 현상
+  - 발생 Level: Read Committed, Read Uncommitted
+
 
 ### (3) Phantom Read 예시
 ```sql
@@ -76,7 +89,12 @@ COMMIT;
 SELECT * FROM orders WHERE price > 100;
 -- 새로 삽입된 행이 추가로 조회됨 (행 수가 달라짐)
 ```
+- Phantom Read
 
+  > 한 트랜잭션 안에서 일정 범위의 레코드를 두 번 이상 읽었을 때, 첫번째 쿼리에서 없던 레코드가 두번째 쿼리에서 나타나는 현상
+  >
+  > 트랜잭션 도중 새로운 레코드 삽입을 허용하기 때문에 나타나는 현상임
+  - 발생 Level: Repeatable Read, Read Committed, Read Uncommitted
 ---
 
 ## 4. Isolation Level 종류
@@ -86,6 +104,29 @@ SELECT * FROM orders WHERE price > 100;
 | READ COMMITTED | 방지 | 발생 | 발생 | 커밋된 데이터만 읽음 (Oracle 기본) |
 | REPEATABLE READ | 방지 | 방지 | 발생 | 같은 데이터를 반복 읽기 일관성 유지 (MySQL 기본) |
 | SERIALIZABLE | 방지 | 방지 | 방지 | 모든 트랜잭션을 순차적으로 처리, 가장 안전 |
+
+** **Shared Lock** : 데이터를 읽을 때 사용하는 락 <br>
+                 여러 트랜잭션이 같은 데이터를 동시에 읽을 수는 있지만, 그 데이터를 변경(UPDATE/DELETE) 하지는 못하게 막는 역할
+
+#### Read Uncommitted (레벨 0)
+> SELECT 문장이 수행되는 동안 해당 데이터에 Shared Lock이 걸리지 않는 계층 <br>
+> 트랜잭션이 처리 중이거나 아직 Commit되지 않은 데이터를 다른 트랜잭션이 읽는 것을 허용 <br>
+> 데이터베이스 일관성 유지 불가 <br>
+
+#### Read Committed (레벨 1)
+> SELECT 문장이 수행되는 동안 해당 데이터에 Shared Lock이 걸리는 계층<br>
+> 트랜잭션이 수행되는 동안 다른 트랜잭션이 접근할 수 없어 대기하게 됨<br>
+> Commit이 이루어진 트랜잭션만 조회 가능
+
+#### REPEATABLE READ (레벨 2)
+> 트랜잭션이 완료될 때까지 SELECT 문장이 사용하는 모든 데이터에 Shared Lock이 걸리는 계층<br>
+> 트랜잭션 범위 내에서 조회한 데이터 내용이 항상 동일함을 보장<br>
+> 다른 사용자는 트랜잭션 영역에 해당되는 데이터에 대한 수정 불가
+
+#### SERIALIZABLE (레벨 3)
+> 트랜잭션이 완료될 때까지 SELECT 문장이 사용하는 모든 데이터에 Shared Lock이 걸리는 계층<br>
+> 완벽한 읽기 일관성 모드 제공<br>
+> 다른 사용자는 트랜잭션 영역에 해당되는 데이터에 대한 수정 및 입력 불가능
 
 ---
 
@@ -97,12 +138,8 @@ SELECT * FROM orders WHERE price > 100;
 - 읽는 트랜잭션은 **자신이 시작된 시점에 커밋된 버전**만 조회함.
 
 ### 💡 핵심 아이디어
-> “각 트랜잭션은 자신만의 타임라인 안에서 데이터의 스냅샷을 본다.”
-
-즉, 트랜잭션은 현실에서의 ‘현재’를 보는 것이 아니라  
+트랜잭션은 현실에서의 ‘현재’를 보는 것이 아니라  
 “**자신이 시작한 순간의 세계를 그대로 유지한 채 작업하는 것**”이다.
-
----
 
 ### 🎬 비유로 이해하기
 
@@ -119,8 +156,6 @@ SELECT * FROM orders WHERE price > 100;
 → A는 **자신만의 시점에 고정된 버전**을 읽고,  
 → B는 **새로운 버전을 만든다**.  
 → 두 사람은 동시에 일하지만 서로 방해하지 않는다.
-
----
 
 ### ⚙️ 동작 방식 요약
 1. **쓰기(UPDATE/DELETE)** → 기존 데이터를 덮어쓰지 않고 새 버전 생성  
@@ -247,3 +282,8 @@ COMMIT TRANSACTION;
 > 대부분의 서비스는 **READ COMMITTED**를 사용한다.  
 > Dirty Read를 방지하면서도 성능 저하가 적기 때문이다.  
 > 단, 금융·결제 등 정확도가 중요한 시스템은 **REPEATABLE READ 이상**을 사용한다.
+>
+
+---
+### 참고
+<a href="https://github.com/gyoogle/tech-interview-for-developer/blob/master/Computer%20Science/Database/%5BDB%5D%20Index.md" target="_blank">gyoogle/tech-interview-for-developer/blob/master/Computer%20Science/Database/%5BDB%5D%20Index.md</a>
