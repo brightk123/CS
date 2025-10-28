@@ -1,13 +1,28 @@
-# Transaction Isolation Level
+# 트랜잭션 격리 수준(Transaction Isolation Level)
 
 ## 1. 개념
+- **트랜잭션에서 일관성 없는 데이터를 허용하도록 하는 수준**
 - 트랜잭션 간의 간섭을 어느 정도까지 허용할지 결정하는 설정.
 - 동시성(성능)과 일관성(정확성)의 균형을 조절함.
 - 내부적으로 Lock과 MVCC(Multi-Version Concurrency Control)를 이용해 구현됨.
-
+  ** Concurrency : 동시성
 ---
+## 2. Isolation level의 필요성
+**Locking** : 특정 데이터(행, 테이블 등)에 대한 독점적인 사용권을 일시적으로 부여하는 장치
+-> " 한 트랜잭션이 데이터를 사용하는 동안 다른 트랜잭션이 그 데이터를 동시에 변경하지 못하게 막는것 "
+-> 일종의 락을 건다 라고 생각하면 이해기 편할 듯
 
-## 2. 트랜잭션 간 발생할 수 있는 문제
+데이터베이스는 ACID(원자성, 일관성, 고립성, 지속성)에 따라 트랜잭션이 독립적인 수행을 하도록 한다. <br>
+따라서 Locking을 통해 트랜잭션이 DB를 다루는 동안 다른 트랜잭션이 관여하지 못하도록 막는 것이 필요하다. <br>
+<br>
+하지만 무조건 Locking으로 동시에 수행되는 수많은 트랜잭션들을 순서대로 처리하는 방식으로 구현하게 되면 <br>
+데이터베이스의 성능은 떨어지게 될 것이다. <br>
+<br>
+그러나 성능을 높이기 위해 Locking의 범위를 줄인다면 잘못된 값이 처리될 문제가 발생하게 된다. <br>
+따라서 **효율적인 Locking 방법이 필요하다.**
+
+
+## 3. 트랜잭션 간 발생할 수 있는 문제
 
 | 문제 | 설명 |
 |------|------|
@@ -28,6 +43,7 @@ SELECT balance FROM accounts WHERE user_id = 'A';
 
 -- 트랜잭션 1
 ROLLBACK;
+
 -- 트랜잭션 2는 잘못된(rollback된) 데이터를 읽은 상태
 ```
 
@@ -63,7 +79,7 @@ SELECT * FROM orders WHERE price > 100;
 
 ---
 
-## 3. Isolation Level 종류
+## 4. Isolation Level 종류
 | 수준 | Dirty Read | Non-repeatable Read | Phantom Read | 특징 |
 |------|-------------|---------------------|---------------|------|
 | READ UNCOMMITTED | 발생 | 발생 | 발생 | 가장 낮은 수준, 커밋 전 데이터 읽음 |
@@ -73,7 +89,7 @@ SELECT * FROM orders WHERE price > 100;
 
 ---
 
-## 4. MVCC (Multi-Version Concurrency Control)
+## 5. MVCC (Multi-Version Concurrency Control)
 
 ### 개념
 - 다중 버전 동시성 제어(MVCC)는 Lock을 최소화하여 **읽기와 쓰기를 동시에 수행할 수 있게 해주는 기술**.
@@ -112,12 +128,12 @@ SELECT * FROM orders WHERE price > 100;
 3. **COMMIT 시점** → 새 버전이 “현재”로 반영  
 4. **ROLLBACK 시점** → 새 버전 폐기, 이전 버전 유지  
 
-👉 덕분에 **READ COMMITTED**나 **REPEATABLE READ** 격리 수준에서도  
+덕분에 **READ COMMITTED**나 **REPEATABLE READ** 격리 수준에서도  
 읽기-쓰기 충돌 없이 높은 동시성을 유지할 수 있다.
 
 ---
 
-## 5. DBMS별 기본값
+## 6. DBMS별 기본값
 | DBMS | 기본 격리 수준 | 특징 |
 |------|----------------|------|
 | MySQL (InnoDB) | REPEATABLE READ | Gap Lock으로 Phantom Read 대부분 방지 |
@@ -126,7 +142,7 @@ SELECT * FROM orders WHERE price > 100;
 
 ---
 
-## 6. 설정 방법
+## 7. 설정 방법
 
 ### MySQL / MariaDB
 ```sql
@@ -170,7 +186,7 @@ COMMIT TRANSACTION;
 
 ---
 
-## 7. 실무 예시
+## 8. 실무 예시
 | 상황 | 추천 수준 | 이유 |
 |------|-------------|------|
 | 일반 웹 서비스 | READ COMMITTED | 안정성과 성능 균형 |
@@ -180,7 +196,7 @@ COMMIT TRANSACTION;
 
 ---
 
-## 8. 면접에서 자주 나오는 질문
+## 9. 면접에서 자주 나오는 질문
 
 ### Q1. Isolation Level을 왜 사용하는가?
 > 트랜잭션 간의 데이터 간섭을 제어하기 위해 사용한다.  
