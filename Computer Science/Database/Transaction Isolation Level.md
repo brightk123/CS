@@ -4,7 +4,7 @@
 - **트랜잭션에서 일관성 없는 데이터를 허용하도록 하는 수준**
 - 트랜잭션 간의 간섭을 어느 정도까지 허용할지 결정하는 설정.
 - 동시성(성능)과 일관성(정확성)의 균형을 조절함.
-- 내부적으로 Lock과 MVCC(Multi-Version Concurrency Control)를 이용해 구현됨.
+- 내부적으로 Lock과 MVCC(Multi-Version Concurrency Control)를 이용해 구현됨. <br>
   ** Concurrency : 동시성
 ---
 ## 2. Isolation level의 필요성
