@@ -8,10 +8,11 @@
 * 시작 일자 : 2025-10-14
 * 종료 일자 : 2025-11-11
 
-## 🛜[Network]((https://github.com/brightk123/CS/edit/main/Computer%20Science/Network)
+## 🛜[Network](https://github.com/brightk123/CS/edit/main/Computer%20Science/Network)
 * 시작 일자 : 2025-11-11
 * 종료 일자 : (미정)
 
 <hr>
+
 
 
