@@ -11,9 +11,10 @@
 |**25/10/28**| Transaction Isolation Level | KA | ⭕
 |        | SQL Injection | SE | ⭕
 |        | SQL과 NOSQL의 차이 | SI | ⭕
-|**25/11/11**| 저장 프로시저(Stored PROCEDURE) | GE | 
+|**25/11/11**| 저장 프로시저(Stored PROCEDURE) | GE | ⭕
 
 <hr>
+
 
 
 
