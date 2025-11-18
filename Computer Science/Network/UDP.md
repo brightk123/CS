@@ -6,7 +6,7 @@
 - 최소한의 프로토콜 메커니즘을 갖춘 간단한 무연결 통신 모델을 사용한다.
   그러나 UDP에는 Handshaking 대화 수단이 없으므로 사용자 프로그램이 기본 네트워크의 불안정성에 노출된다.
 
-![image.png](attachment:2d1d2890-5470-4e91-b4f1-bf98f5510d30:image.png)
+![image.png](https://github.com/brightk123/CS/blob/main/Computer%20Science/Network/img/UDP_TCP_%ED%86%B5%EC%8B%A0.png)
 
 [출처 : inpa.tistory](https://inpa.tistory.com/entry/NW-%F0%9F%8C%90-%EC%95%84%EC%A7%81%EB%8F%84-%EB%AA%A8%ED%98%B8%ED%95%9C-TCP-UDP-%EA%B0%9C%EB%85%90-%E2%9D%93-%EC%89%BD%EA%B2%8C-%EC%9D%B4%ED%95%B4%ED%95%98%EC%9E%90)
 
@@ -62,11 +62,11 @@ UDP를 전송에 사용하는 HTTP/3(QUIC)
 
 ### TCP 헤더 구조
 
-![image.png](attachment:533c11c1-57e3-4a7a-a1c0-9a6295462f20:image.png)
+![image.png](https://github.com/brightk123/CS/blob/main/Computer%20Science/Network/img/TCP_%ED%97%A4%EB%8D%94.png)
 
 ### UDP 헤더 구조
 
-![image.png](attachment:47e11189-6ba4-4358-afb6-e1c11473689f:image.png)
+![image.png](https://github.com/brightk123/CS/blob/main/Computer%20Science/Network/img/UDP_%ED%97%A4%EB%8D%94.png)
 
 [출처 : inpa.tistory](https://inpa.tistory.com/entry/NW-%F0%9F%8C%90-%EC%95%84%EC%A7%81%EB%8F%84-%EB%AA%A8%ED%98%B8%ED%95%9C-TCP-UDP-%EA%B0%9C%EB%85%90-%E2%9D%93-%EC%89%BD%EA%B2%8C-%EC%9D%B4%ED%95%B4%ED%95%98%EC%9E%90)
 
