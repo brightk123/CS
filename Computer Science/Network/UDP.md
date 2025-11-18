@@ -8,7 +8,7 @@
 
 ![image.png](attachment:2d1d2890-5470-4e91-b4f1-bf98f5510d30:image.png)
 
-[출처 : https://inpa.tistory.com/entry/NW-%F0%9F%8C%90-%EC%95%84%EC%A7%81%EB%8F%84-%EB%AA%A8%ED%98%B8%ED%95%9C-TCP-UDP-%EA%B0%9C%EB%85%90-%E2%9D%93-%EC%89%BD%EA%B2%8C-%EC%9D%B4%ED%95%B4%ED%95%98%EC%9E%90]
+[출처 : inpa.tistory](https://inpa.tistory.com/entry/NW-%F0%9F%8C%90-%EC%95%84%EC%A7%81%EB%8F%84-%EB%AA%A8%ED%98%B8%ED%95%9C-TCP-UDP-%EA%B0%9C%EB%85%90-%E2%9D%93-%EC%89%BD%EA%B2%8C-%EC%9D%B4%ED%95%B4%ED%95%98%EC%9E%90)
 
 - UDP는 TCP와 다르게 **연결 지향적이지 않고 상대방과의 연결을 확인하지 않으며 데이터를 전송한다. Handshaking 과정을 거치지 않기 때문에 데이터가 전송되는지 혹은 정상적으로 도착했는지에 대한 확인 절차가 없습니다.**
 
@@ -40,10 +40,8 @@
 TCP를 전송에 사용하는 HTTP/1.1, HTTP/2
 
 UDP를 전송에 사용하는 HTTP/3(QUIC)
-  → UDP 기반 QUIC 프로토콜을 이용해 설계한 HTTP 3.0
-⇒ 관련 자료를 한 번 읽어 보세염 ^_^
-
-https://inpa.tistory.com/entry/WEB-%F0%9F%8C%90-HTTP-30-%ED%86%B5%EC%8B%A0-%EA%B8%B0%EC%88%A0-%EC%9D%B4%EC%A0%9C%EB%8A%94-%ED%99%95%EC%8B%A4%ED%9E%88-%EC%9D%B4%ED%95%B4%ED%95%98%EC%9E%90
+  → UDP 기반 QUIC 프로토콜을 이용해 설계한 HTTP 3.0 <br>
+⇒ 관련 자료를 한 번 읽어 보세염 ^_^ [HTTP 3.0 - inpa.tistory](https://inpa.tistory.com/entry/WEB-%F0%9F%8C%90-HTTP-30-%ED%86%B5%EC%8B%A0-%EA%B8%B0%EC%88%A0-%EC%9D%B4%EC%A0%9C%EB%8A%94-%ED%99%95%EC%8B%A4%ED%9E%88-%EC%9D%B4%ED%95%B4%ED%95%98%EC%9E%90)
 
 ---
 
@@ -70,7 +68,8 @@ https://inpa.tistory.com/entry/WEB-%F0%9F%8C%90-HTTP-30-%ED%86%B5%EC%8B%A0-%EA%B
 
 ![image.png](attachment:47e11189-6ba4-4358-afb6-e1c11473689f:image.png)
 
-[출처 : https://inpa.tistory.com/entry/NW-%F0%9F%8C%90-%EC%95%84%EC%A7%81%EB%8F%84-%EB%AA%A8%ED%98%B8%ED%95%9C-TCP-UDP-%EA%B0%9C%EB%85%90-%E2%9D%93-%EC%89%BD%EA%B2%8C-%EC%9D%B4%ED%95%B4%ED%95%98%EC%9E%90]
+[출처 : inpa.tistory](https://inpa.tistory.com/entry/NW-%F0%9F%8C%90-%EC%95%84%EC%A7%81%EB%8F%84-%EB%AA%A8%ED%98%B8%ED%95%9C-TCP-UDP-%EA%B0%9C%EB%85%90-%E2%9D%93-%EC%89%BD%EA%B2%8C-%EC%9D%B4%ED%95%B4%ED%95%98%EC%9E%90)
+
 
 1. 헤더 크기 : TCP는 최소 20바이트, UDP는 8바이트로 훨씬 작음
 2. 플래그와 제어 정보 : TCP는 연결을 설정하고 제어하는 여러 플래그(SYN, ACK, FIN 등)를 포함하고 있으며, 흐름 제어 및 오류 수정 기능도 제공한다. 그러나 UDP는 단순히 데이터를 전송하며 제어 정보가 없음
@@ -120,8 +119,7 @@ https://inpa.tistory.com/entry/WEB-%F0%9F%8C%90-HTTP-30-%ED%86%B5%EC%8B%A0-%EA%B
 
 참고
 
-https://inpa.tistory.com/entry/NW-%F0%9F%8C%90-%EC%95%84%EC%A7%81%EB%8F%84-%EB%AA%A8%ED%98%B8%ED%95%9C-TCP-UDP-%EA%B0%9C%EB%85%90-%E2%9D%93-%EC%89%BD%EA%B2%8C-%EC%9D%B4%ED%95%B4%ED%95%98%EC%9E%90
+* https://inpa.tistory.com/entry/NW-%F0%9F%8C%90-%EC%95%84%EC%A7%81%EB%8F%84-%EB%AA%A8%ED%98%B8%ED%95%9C-TCP-UDP-%EA%B0%9C%EB%85%90-%E2%9D%93-%EC%89%BD%EA%B2%8C-%EC%9D%B4%ED%95%B4%ED%95%98%EC%9E%90
+* https://developer.mozilla.org/ko/docs/Glossary/UDP
+* https://github.com/gyoogle/tech-interview-for-developer/blob/master/Computer%20Science/Network/UDP.md
 
-https://developer.mozilla.org/ko/docs/Glossary/UDP
-
-https://github.com/gyoogle/tech-interview-for-developer/blob/master/Computer%20Science/Network/UDP.md
