@@ -7,9 +7,9 @@
 |**25/11/18**| UDP | KA | ⭕
 |        | TCP 3 way / 4way handshake | SI | ⭕
 |        | DNS | GA | ⭕
-|**25/11/25**| HTTP & HTTPS | GA | 
-|        | 대칭키 & 공개키 | SE  | 
-|        | TLS Handsahke | SI | 
+|**25/11/25**| HTTP & HTTPS | GA | ⭕
+|        | 대칭키 & 공개키 | SE  | ⭕
+|        | TLS Handsahke | SI | ⭕
 
 <hr>
 
