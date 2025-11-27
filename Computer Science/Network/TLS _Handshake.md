@@ -1,4 +1,4 @@
-## TLS(Transport Layer Security) Handshake
+# TLS(Transport Layer Security) Handshake
 
 클라이언트와 서버 간에 **안전한 통신**을 설정하기 위한 절차
 
